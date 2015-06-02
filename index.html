@@ -123,9 +123,9 @@
 							<li>Buat list bilangan bulat dari 5 sampai n dengan n sebagai batas dari bilangan prima yang dicari. Beri status setiap bilangan sebagai bilangan komposit</li>
 							<li>Untuk setiap bilangan k pada list, uji k dengan melakukan modulo 60, hasilnya ada beberapa kemungkinan:</li>
 								<ul style="list-style-type:none">
-									<li>- Jika hasil modulo 60 nya 1, 13, 17, 29, 37, 41, 49, 53 ( juga memiliki hasil 1 jika dilakukan modulo 4). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms 4x^2 +y^2 =k adalah ganjil dan k adalah squarefree number.</li>
-									<li>- Jika hasil modulo 60 nya 7, 19, 31, 43 (juga memiliki hasil 1 jika dilakukan modulo 6). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms 3x^2 +y^2 =k adalah ganjil dan k adalah squarefree number.</li>
-									<li>- Jika hasil modulo 60 nya 11, 23, 47, 59 (juga memiliki hasil 11 jika dilakukan modulo 12). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms 3x^2 -y^2 =k adalah ganjil dan k adalah squarefree number.</li>
+									<li>- Jika hasil modulo 60 nya 1, 13, 17, 29, 37, 41, 49, 53 ( juga memiliki hasil 1 jika dilakukan modulo 4). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms <img src="http://quicklatex.com/cache3/ql_39b98b171db0c2e198cd6d5b9027094e_l3.png"> adalah ganjil dan k adalah squarefree number.</li>
+									<li>- Jika hasil modulo 60 nya 7, 19, 31, 43 (juga memiliki hasil 1 jika dilakukan modulo 6). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms <img src="http://quicklatex.com/cache3/ql_65ca2e4de663fcce91dcf746e3abbeca_l3.png"> adalah ganjil dan k adalah squarefree number.</li>
+									<li>- Jika hasil modulo 60 nya 11, 23, 47, 59 (juga memiliki hasil 11 jika dilakukan modulo 12). Beri status k sebagai bilangan prima jika dan hanya jika banyaknya solusi terhadap binary quadratic forms <img src="http://quicklatex.com/cache3/ql_da439dc45b21e89d15e04d3023d5d5ee_l3.png"> adalah ganjil dan k adalah squarefree number.</li>
 									<li>- Selain 3 kondisi di atas tidak perlu mengganti status bilangan.</li>
 								</ul>
 							<li>Lakukan traversal dari bilangan pertama pada list.</li>
@@ -134,6 +134,10 @@
 							<li>Ulangi langkah 4 - 6, sampai tidak ada lagi bilangan prima di list awal.</li>
 							<li>Sekarang, list P berisi bilangan prima yang lebih kecil sama dengan n.</li>
 						</ol>
+						<p>
+							<a href="http://dl.dropboxusercontent.com/u/29023244/atkin.cpp">Contoh implementasi dengan C++</a>
+							(sumber:shiv4289.wordpress.com-sieve_of_atkins)
+						</p>
 						</br>
 					</div>
 					<div id="reference" class="tab-pane fade">
