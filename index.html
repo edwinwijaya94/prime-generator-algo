@@ -27,6 +27,7 @@
 					<li><a data-toggle="tab" href="#eratosthenes">Sieve of Eratosthenes</a></li>
 					<li><a data-toggle="tab" href="#sundaram">Sieve of Sundaram</a></li>
 					<li><a data-toggle="tab" href="#atkin">Sieve of Atkin</a></li>
+					<li><a data-toggle="tab" href="#reference">Referensi</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-10">
@@ -51,6 +52,7 @@
 							Sieve of Eratosthenes atau Saringan Eratosthenes adalah algoritma sieving pertama yang digunakan untuk membangkitkan  semua bilangan prima yang lebih kecil atau sama dengan suatu bilangan n . Algoritma ini ditemukan oleh Eratosthenes sekitar tahun 300 SM, bekerja dengan cara menandai semua kelipatan dari bilangan prima yang lebih kecil dari n.
 						</p>
 						</br>
+						<img src="img/eratosthenes.gif" class="img-responsive">
 						<p>Algoritma :</p>
 						<ol>
 							<li>Diberikan list bilangan bulat positif 2, 3, 4, 5, ..., n dengan n adalah batas dari bilangan prima yang ingin dicari.</li>
@@ -63,10 +65,10 @@
 							Ide dasar dari algoritma ini adalah bahwa untuk setiap nilai p dapat dipastikan bahwa p adalah prima karena kita sudah menandai semua bilangan yang merupakan kelipatan dari bilangan yang lain yang lebih kecil dari p. Dari algoritma di atas juga dapat dilihat bahwa perbedaan yang paling  mendasar dari sieving dibandingkan  metode  trial division adalah bahwa pada metode sieving, pengujian hanya dilakukan sekali terhadap suatu bilangan prima beserta kelipatannya, sedangkan pada trial division, pengujian tetap dilakukan dengan kelipatan bilangannya. Hal ini sekaligus menyimpulkan bahwa untuk membangkitkan bilangan – bilangan prima yang relatif kecil kita dapat menggunakan metode Sieve of Eratosthenes. 
 						</p>	
 						<p>
-							Perbaikan terhadap efisiensi algoritma ini dapat dilakukan antara lain dengan membuat daftar bilangan yang berisi bilangan ganjil saja, lalu penghapusan bilangan dari list dilakukan terhadap bilangan – bilangan yang merupakan kelipatan ganjil dari p yaitu 3p, 5p, 7p, 9p, dan seterusnya.
+							Perbaikan terhadap efisiensi algoritma ini dapat dilakukan antara lain dengan membuat daftar bilangan yang berisi bilangan ganjil saja, lalu penghapusan bilangan dari list dilakukan terhadap bilangan - bilangan yang merupakan kelipatan ganjil dari p yaitu 3p, 5p, 7p, 9p, dan seterusnya.
 						</p>	
 						<p>	
-							Pada Euler’s Sieve yang juga menggunakan metode Sieve of Eratosthenes, bilangan yang merupakan kelipatan akan dihapus dari list, sehingga bilangan komposit hanya akan diperiksa 1 kali, berbeda dengan metode Sieve of Eratosthenes yang dijelaskan sebelumnya, di mana dimungkinkan penandaan bilangan komposit dilakukan lebih dari 1 kali, misal bilangan 15 akan ditandai ketika p =3 dan p = 5 karena 15 adalah kelipatan dari keduanya.
+							Pada Euler’s Sieve yang juga menggunakan metode Sieve of Eratosthenes, bilangan yang merupakan kelipatan akan dihapus dari list, sehingga bilangan komposit hanya akan diperiksa 1 kali, berbeda dengan metode Sieve of Eratosthenes yang dijelaskan sebelumnya, di mana dimungkinkan penandaan bilangan komposit dilakukan lebih dari 1 kali, misal bilangan 15 akan ditandai ketika p = 3 dan p = 5 karena 15 adalah kelipatan dari keduanya.
 						</p>
 						</br>
 					</div>
@@ -76,16 +78,20 @@
 							Algoritma ini ditemukan oleh seorang matematikawan India bernama S.P.Sundaram pada tahun 1934. Serupa dengan algoritma Eratosthenes, Sieve of Sundaram juga mengeliminasi bilangan komposit yang berada dalam bentuk i + j + 2ij dengan syarat:
 						</p>
 						<p>
-							i , j adalah elemen bilangan bulat dan 1<= i <=j
-							i + j + 2ij <= n
+							<ul>
+								<li>i , j adalah elemen bilangan bulat dan <img src="http://quicklatex.com/cache3/ql_627a7dd200c0a632e3e3574fba56fb95_l3.png"></li>
+								<li><img src="http://quicklatex.com/cache3/ql_55e5175aa2949246d4466be89e96a0b9_l3.png"></li>
+							<ul>
 						</p>
+						</br>
+						<img src="img/sundaram.gif" class="img-responsive">
 						<p>Algoritma :</p>
 						<ol>
 							<li>Diberikan list bilangan bulat positif dari 1 sampai n.</li>
 							<li>Eliminasi semua bilangan pada list yang memenuhi bentuk i + j + 2ij dengan syarat:</li>
 								<ul style="list-style-type:none">
-									<li>a.	i , j adalah elemen bilangan bulat dan 1<=i <=j</li>
-									<li>b.	i + j + 2ij <= n</li>
+									<li>a.	i , j adalah elemen bilangan bulat dan <img src="http://quicklatex.com/cache3/ql_627a7dd200c0a632e3e3574fba56fb95_l3.png"></li>
+									<li>b.	<img src="http://quicklatex.com/cache3/ql_55e5175aa2949246d4466be89e96a0b9_l3.png"></li>
 								</ul>
 							<li>Sekarang semua bilangan dalam bentuk  2k + 1 adalah bilangan prima, dengan k adalah semua bilangan yang belum tereliminasi pada list.</li> 
 						</ol>
@@ -93,9 +99,7 @@
 						<p>
 							Semua  bilangan 2k+1 yang telah kita hitung pada langkah 3 adalah bilangan ganjil.  Dapat kita amati juga bahwa ada bilangan ganjil yang lebih kecil dari 2k+2 tapi tidak terdapat pada list bilangan prima yang dihasilkan pada langkah 3. Misalkan bilangan-bilangan yang tidak terdapat pada list bilangan prima adalah q=2k + 1. Jika q bukan bilangan prima, maka kita dapat tulis ulang q sebagai :
 						</p>
-						<p>q = 2(i + j + 2ij) + 1</p>
-						<p>q= 2i + 2j + 4ij + 1</p>
-						<p>q= (2i + 1)(2j + 1)</p>
+						<img src="http://quicklatex.com/cache3/ql_e03fce21c68334976125f7b1c86647ba_l3.png">
 						<p>
 							sehingga q adalah bilangan ganjil komposit.
 						</p>
@@ -110,7 +114,7 @@
 							Algoritma ini ditemukan oleh A. O. L. Atkin and Daniel J. Bernstein pada tahun 2003. Sieve of Atkin adalah algoritma yang menggunakan binary quadratic forms dalam mengeliminasi bilangan komposit. Berbeda dengan dua algoritma sieving yang dijelaskan sebelumnya, algoritma Atkin agak lebih sulit dipahami namun memiliki performa yang lebih baik. Jadi ada beberapa istilah yang perlu dimengerti terlebih dahulu, antara lain :
 						</p>
 						<ol>
-							<li>Binary quadratic forms : sebuah bilangan dapat direpresntasikan sebagai binary quadratic forms jika dapat ditulis ulang sebagai ax^2 + bxy +cy^2. Contoh : 67 = 2^2 + 7 x 3^2</li>
+							<li>Binary quadratic forms : sebuah bilangan dapat direpresntasikan sebagai binary quadratic forms jika dapat ditulis ulang sebagai <img src="http://quicklatex.com/cache3/ql_1bdbe7a21aaaeda38f08e6a0e4c52781_l3.png">. Contoh : <img src="http://quicklatex.com/cache3/ql_b3a34991a3188a28900fb9c93bf96325_l3.png"></li>
 							<li>Squarefree number : bilangan yang tidak habis dibagi oleh semua bilangan kuadrat sempurna kecuali 1. Contoh : 1,2,3,5,6,7,10,11,13,14,15, ...</li>
 						</ol>
 						<p>Algoritma</p>
@@ -127,15 +131,28 @@
 							<li>Lakukan traversal dari bilangan pertama pada list.</li>
 							<li>Ambil bilangan pertama pada list yang memiliki status bilangan prima, masukkan ke list bilangan prima P.</li>
 							<li>Beri status sebagai bilangan komposit untuk setiap kelipatan dari kuadrat bilangan tersebut.</li>
-							<li>Ulangi langkah 4 – 6, sampai tidak ada lagi bilangan prima di list awal.</li>
+							<li>Ulangi langkah 4 - 6, sampai tidak ada lagi bilangan prima di list awal.</li>
 							<li>Sekarang, list P berisi bilangan prima yang lebih kecil sama dengan n.</li>
 						</ol>
 						</br>
+					</div>
+					<div id="reference" class="tab-pane fade">
+						<h3>Referensi</h3>
+						<a href="http://en.wikipedia.org/wiki/Trial_division">Wikipedia-Trial_division </a></br>
+						<a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia-Sieve_of_Eratosthenes </a></br>
+						<a href="http://en.wikipedia.org/wiki/Sieve_of_Sundaram">Wikipedia-Sieve_of_Sundaram </a></br>
+						<a href="https://plus.maths.org/content/sundarams-sieve">plus.math.org-sundaram_sieve</a></br>
+						<a href="http://en.wikipedia.org/wiki/Sieve_of_Atkin">Wikipedia-Sieve_of_Atkin </a></br>
+						<a href="https://shiv4289.wordpress.com/2013/10/15/primality-testing-ii-sieve-of-atkins/">shiv4289.wordpress.com-sieve_of_atkins</a></br>
+						<a href="http://cr.yp.to/papers/primesieves-19990826.pdf">Prime Sieves Using Binary Quadratic Forms (A. O. L. Atkin and D.J. Bernstein)</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<footer class="footer">
+		<div id="author">2015 - Edwin Wijaya / 13513040</div>
+	</footer>
 </body>
 
 </html>
